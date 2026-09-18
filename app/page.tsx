@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const programs = [
   {
     title: "Spark Lab",
@@ -88,36 +90,6 @@ const faqs = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fffaf2] text-slate-900">
-      <header className="border-b border-slate-200/80 bg-white/80 backdrop-blur-sm sticky top-0 z-20">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0f172a] text-lg font-black text-white">
-              D
-            </div>
-            <div>
-              <div className="text-lg font-black tracking-tight">Defiant STEM</div>
-              <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">For curious kids</div>
-            </div>
-          </div>
-
-          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-            <a href="#programs" className="transition hover:text-slate-900">Programs</a>
-            <a href="#benefits" className="transition hover:text-slate-900">Why it works</a>
-            <a href="#reviews" className="transition hover:text-slate-900">Reviews</a>
-            <a href="#faq" className="transition hover:text-slate-900">FAQ</a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <button className="hidden rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 sm:inline-flex hover:border-slate-400">
-              Log in
-            </button>
-            <button className="rounded-full bg-[#0f172a] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-[#1e293b]">
-              Start a subscription
-            </button>
-          </div>
-        </div>
-      </header>
-
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(249,115,22,0.15),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.18),_transparent_30%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-24">
@@ -133,18 +105,18 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#programs"
+              <Link
+                href="/shop"
                 className="inline-flex items-center justify-center rounded-full bg-[#0f172a] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-slate-200 transition hover:-translate-y-0.5 hover:bg-[#1e293b]"
               >
                 Explore kits
-              </a>
-              <a
-                href="#reviews"
+              </Link>
+              <Link
+                href="/#reviews"
                 className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
               >
                 See families love it
-              </a>
+              </Link>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-4 text-sm text-slate-600">
@@ -220,9 +192,9 @@ export default function Home() {
                 Pick the right STEM path for your child.
               </h2>
             </div>
-            <a href="#faq" className="text-sm font-semibold text-slate-700 underline-offset-4 hover:underline">
+            <Link href="/#faq" className="text-sm font-semibold text-slate-700 underline-offset-4 hover:underline">
               Need help choosing? See the FAQ
-            </a>
+            </Link>
           </div>
 
           <div className="mt-10 grid gap-6 xl:grid-cols-3">
@@ -246,12 +218,12 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="#"
+                  <Link
+                    href={`/product/${program.title.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}`}
                     className="mt-6 inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
                   >
                     View details
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}
@@ -341,33 +313,16 @@ export default function Home() {
             Give your child a monthly rhythm of discovery, building, and joyful problem-solving that lasts beyond the box.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="#" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-base font-semibold text-slate-900 transition hover:bg-slate-100">
+            <Link href="/shop" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-base font-semibold text-slate-900 transition hover:bg-slate-100">
               Start a subscription
-            </a>
-            <a href="#programs" className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/5">
+            </Link>
+            <Link href="/#programs" className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/5">
               View programs
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-slate-600 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-          <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0f172a] text-sm font-black text-white">
-              D
-            </div>
-            <span className="font-semibold text-slate-800">Defiant STEM</span>
-          </div>
-          <div className="flex flex-wrap gap-5">
-            <a href="#programs" className="hover:text-slate-900">Programs</a>
-            <a href="#benefits" className="hover:text-slate-900">Benefits</a>
-            <a href="#reviews" className="hover:text-slate-900">Reviews</a>
-            <a href="#faq" className="hover:text-slate-900">FAQ</a>
-          </div>
-          <div>© 2026 Defiant STEM</div>
-        </div>
-      </footer>
     </main>
   );
 }
