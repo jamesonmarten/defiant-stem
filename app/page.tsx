@@ -2,48 +2,64 @@ import Link from "next/link";
 
 const programs = [
   {
-    title: "Spark Lab",
+    title: "Circuit Lab",
+    slug: "spark-lab",
     age: "Ages 4-6",
     price: "$24/mo",
-    description: "Build confidence through sensory experiments, playful coding, and maker projects.",
-    accent: "from-[#f7b267] to-[#f4845f]",
+    description: "Light up first STEM wins with snap circuits, magnets, sensors, and guided science play.",
+    accent: "from-[#fbbf24] to-[#f97316]",
   },
   {
-    title: "Rocket Builders",
+    title: "Rover Builders",
+    slug: "rocket-builders",
     age: "Ages 7-9",
     price: "$29/mo",
-    description: "Tackle engineering challenges, design prototypes, and test ideas with every box.",
-    accent: "from-[#6a5cff] to-[#4cc9f0]",
+    description: "Build rolling robots, launchers, bridges, and test rigs while learning real engineering habits.",
+    accent: "from-[#2563eb] to-[#06b6d4]",
   },
   {
-    title: "Future Makers",
+    title: "AI & Robotics Studio",
+    slug: "future-makers",
     age: "Ages 10+",
     price: "$34/mo",
-    description: "Go deeper into robotics, science, and real-world problem solving with family projects.",
-    accent: "from-[#14b8a6] to-[#2dd4bf]",
+    description: "Explore robotics, simple code logic, machine-thinking games, and advanced design missions.",
+    accent: "from-[#7c3aed] to-[#14b8a6]",
   },
 ];
 
 const values = [
   {
-    title: "Hands-on discovery",
-    text: "Every kit turns big ideas into tangible experiments, builds, and creative problem-solving moments.",
+    title: "Real robotics thinking",
+    text: "Kids learn how machines sense, move, fail, and improve through approachable robot builds and challenge cards.",
   },
   {
-    title: "Family-first learning",
-    text: "Designed for parents and kids to explore together, making curiosity feel accessible and exciting.",
+    title: "Science you can test",
+    text: "Every box turns physics, chemistry, circuits, and biology into experiments kids can measure and repeat.",
   },
   {
-    title: "Confidence through play",
-    text: "Kids learn by making, testing, and revising—building grit and joy in the process.",
+    title: "Engineer, revise, retry",
+    text: "Projects are built around the design loop: ask a better question, prototype, test, tweak, and try again.",
   },
 ];
 
 const highlights = [
-  "STEM activities with clear learning goals",
-  "No-screen, no-stress family projects",
-  "Fresh kit themes every month",
-  "Gift-ready boxes with step-by-step guides",
+  "Robotics, circuits, chemistry, and physics missions",
+  "No-screen builds with optional code-thinking extensions",
+  "Monthly lab themes with real engineering vocabulary",
+  "Parent field guide with hypotheses, prompts, and safety notes",
+];
+
+const labMetrics = [
+  { value: "18+", label: "monthly experiments" },
+  { value: "3", label: "robotics skill tracks" },
+  { value: "0", label: "required screens" },
+];
+
+const scienceTracks = [
+  "Robot motion and simple machines",
+  "Circuits, sensors, and signals",
+  "Kitchen chemistry and material science",
+  "Space, rockets, force, and flight",
 ];
 
 const testimonials = [
@@ -90,66 +106,88 @@ const faqs = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fffaf2] text-slate-900">
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(249,115,22,0.15),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.18),_transparent_30%)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-24">
+      <section className="hero-video-shell relative isolate min-h-[760px] overflow-hidden bg-slate-950 text-white">
+        <video
+          className="absolute inset-0 h-full w-full object-cover opacity-55"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1600&q=80"
+        >
+          <source
+            src="https://videos.pexels.com/video-files/853870/853870-hd_1920_1080_25fps.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(15,23,42,0.92)_0%,_rgba(15,23,42,0.72)_45%,_rgba(15,23,42,0.35)_100%)]" />
+        <div className="parallax-grid absolute inset-0 opacity-30" />
+        <div className="parallax-orbit parallax-slow left-[8%] top-[18%]" />
+        <div className="parallax-orbit parallax-fast bottom-[14%] right-[9%]" />
+
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:min-h-[760px] lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-24">
           <div className="flex flex-col justify-center">
-            <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-[#fbbf24]/60 bg-[#fff7d6] px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#9a5b00]">
-              Hands-on learning for everyday bravery
+            <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-200/40 bg-cyan-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-cyan-100 backdrop-blur">
+              Robotics, circuits, chemistry, and engineering for kids
             </span>
-            <h1 className="max-w-xl text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl lg:text-7xl">
-              Build fearless thinkers.
+            <h1 className="max-w-2xl text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+              Build bold little scientists and robot makers.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl">
-              Defiant STEM turns curiosity into confidence with educational kits that mix science, design, and play to help kids explore the world with purpose.
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200 sm:text-xl">
+              Defiant STEM delivers hands-on robotics and science kits that help kids wire circuits, test hypotheses, build moving machines, and think like engineers.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/shop"
-                className="inline-flex items-center justify-center rounded-full bg-[#0f172a] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-slate-200 transition hover:-translate-y-0.5 hover:bg-[#1e293b]"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-300 px-6 py-3.5 text-base font-black text-slate-950 shadow-lg shadow-cyan-950/30 transition hover:-translate-y-0.5 hover:bg-cyan-200"
               >
-                Explore kits
+                Explore robot kits
               </Link>
               <Link
                 href="/#reviews"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3.5 text-base font-semibold text-white backdrop-blur transition hover:bg-white/15"
               >
-                See families love it
+                See lab results
               </Link>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4 text-sm text-slate-600">
-              <span className="font-semibold text-slate-900">Trusted by families</span>
-              <span>•</span>
-              <span>4.9/5 parent rating</span>
-              <span>•</span>
-              <span>30-day satisfaction guarantee</span>
+            <div className="mt-10 grid max-w-xl gap-3 sm:grid-cols-3">
+              {labMetrics.map((metric) => (
+                <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur">
+                  <div className="text-3xl font-black text-cyan-200">{metric.value}</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
+                    {metric.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -left-8 top-10 h-20 w-20 rounded-full bg-[#fbbf24]/60 blur-2xl" />
-            <div className="absolute -right-6 bottom-8 h-24 w-24 rounded-full bg-[#7dd3fc]/60 blur-2xl" />
-
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 shadow-[0_20px_80px_rgba(15,23,42,0.12)]">
-              <div className="overflow-hidden rounded-[1.5rem] bg-slate-100">
-                <img
-                  src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80"
-                  alt="Kids learning through hands-on STEM activity"
-                  className="h-[520px] w-full object-cover"
-                />
+          <div className="relative flex items-center justify-center lg:justify-end">
+            <div className="parallax-card parallax-medium relative w-full max-w-md overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+              <div className="rounded-[1.5rem] bg-slate-950/80 p-5">
+                <div className="flex items-center justify-between text-xs font-bold uppercase tracking-[0.2em] text-cyan-200">
+                  <span>Mission deck</span>
+                  <span>Week 01</span>
+                </div>
+                <div className="mt-6 rounded-2xl bg-cyan-300/15 p-5">
+                  <div className="text-4xl font-black text-white">Rover Rescue</div>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">
+                    Wire a motor circuit, tune wheel traction, and guide a rover across a simulated Mars canyon.
+                  </p>
+                </div>
+                <div className="mt-5 grid grid-cols-2 gap-3 text-sm text-slate-200">
+                  <div className="rounded-2xl bg-white/10 p-4">Sensors</div>
+                  <div className="rounded-2xl bg-white/10 p-4">Motors</div>
+                  <div className="rounded-2xl bg-white/10 p-4">Hypothesis</div>
+                  <div className="rounded-2xl bg-white/10 p-4">Prototype</div>
+                </div>
               </div>
-              <div className="absolute left-8 top-8 rounded-2xl bg-white/90 p-4 shadow-lg backdrop-blur-sm">
-                <div className="text-xs uppercase tracking-[0.2em] text-slate-500">New box</div>
-                <div className="mt-2 text-2xl font-black text-slate-900">Flight Lab</div>
-                <div className="mt-1 text-sm text-slate-600">Build, test, and launch</div>
-              </div>
-              <div className="absolute bottom-8 right-8 rounded-2xl bg-[#0f172a] p-4 text-white shadow-xl">
-                <div className="text-xs uppercase tracking-[0.18em] text-slate-300">Includes</div>
-                <div className="mt-2 text-xl font-bold">4 projects</div>
-                <div className="text-sm text-slate-300">+ parent guide</div>
-              </div>
+            </div>
+            <div className="parallax-card parallax-fast absolute -bottom-8 left-0 hidden rounded-3xl border border-white/15 bg-white/10 p-5 text-white shadow-xl backdrop-blur md:block">
+              <div className="text-xs uppercase tracking-[0.2em] text-cyan-200">Lab mode</div>
+              <div className="mt-2 text-2xl font-black">Test. Tweak. Try again.</div>
             </div>
           </div>
         </div>
@@ -157,10 +195,10 @@ export default function Home() {
 
       <section className="border-y border-slate-200 bg-white/60">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-6 text-center text-sm font-medium text-slate-600 sm:grid-cols-2 sm:px-8 lg:grid-cols-4 lg:px-10">
-          <div>STEM activities that make learning feel like play</div>
-          <div>Age-based kits from early explorers to future engineers</div>
-          <div>Designed for family time, not just solo screen time</div>
-          <div>Fresh themes every month with no guesswork</div>
+          <div>Build circuits, robots, rockets, and science rigs</div>
+          <div>Age-based engineering challenges for growing kids</div>
+          <div>Hands-on family labs with real STEM vocabulary</div>
+          <div>Fresh robotics and science missions every month</div>
         </div>
       </section>
 
@@ -168,18 +206,41 @@ export default function Home() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#8a4d0d]">Why families choose Defiant STEM</p>
           <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">
-            Learning that feels bold, joyful, and real.
+            Robotics and science without the intimidating parts.
           </h2>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {values.map((item) => (
             <div key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fef3c7] text-2xl">✦</div>
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#dff7ff] text-2xl">⚙</div>
               <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
               <p className="mt-4 text-base leading-7 text-slate-600">{item.text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="parallax-lab relative overflow-hidden py-24 text-white">
+        <div className="absolute inset-0 bg-slate-950/72" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">Inside the monthly lab</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] sm:text-5xl">
+              Kids meet robotics through science they can touch.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-200">
+              Every mission starts with a question, introduces a real STEM concept, then asks kids to build a working model that proves or challenges their idea.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {scienceTracks.map((track) => (
+              <div key={track} className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur">
+                <div className="mb-5 h-2 w-16 rounded-full bg-cyan-300" />
+                <h3 className="text-xl font-black">{track}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -219,7 +280,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <Link
-                    href={`/product/${program.title.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}`}
+                    href={`/product/${program.slug}`}
                     className="mt-6 inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
                   >
                     View details
