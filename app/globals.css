@@ -80,6 +80,326 @@ img {
   background-size: cover;
 }
 
+.character-stage::before,
+.character-stage::after {
+  position: absolute;
+  content: "";
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.character-stage::before {
+  top: 24px;
+  right: 32px;
+  height: 56px;
+  width: 56px;
+}
+
+.character-stage::after {
+  bottom: 18px;
+  left: 28px;
+  height: 28px;
+  width: 92px;
+}
+
+.cartoon-hero {
+  position: relative;
+  z-index: 1;
+  width: 150px;
+  height: 210px;
+  transform-origin: bottom center;
+  animation: character-bob 4.8s ease-in-out infinite;
+}
+
+.cartoon-head {
+  position: absolute;
+  left: 23px;
+  top: 20px;
+  width: 104px;
+  height: 88px;
+  border: 5px solid #0f172a;
+  border-radius: 38px 38px 32px 32px;
+  background: #f8fafc;
+  box-shadow: inset -10px -10px 0 rgba(15, 23, 42, 0.08);
+}
+
+.cartoon-faceplate {
+  position: absolute;
+  left: 14px;
+  top: 20px;
+  width: 68px;
+  height: 44px;
+  border: 4px solid #0f172a;
+  border-radius: 22px;
+  background: #c7f9ff;
+}
+
+.cartoon-eye {
+  position: absolute;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #0f172a;
+}
+
+.cartoon-eye:first-child {
+  left: 16px;
+}
+
+.cartoon-eye:nth-child(2) {
+  right: 16px;
+}
+
+.cartoon-smile {
+  position: absolute;
+  left: 22px;
+  bottom: 9px;
+  width: 24px;
+  height: 10px;
+  border-bottom: 4px solid #0f172a;
+  border-radius: 0 0 999px 999px;
+}
+
+.cartoon-body {
+  position: absolute;
+  left: 33px;
+  top: 102px;
+  width: 84px;
+  height: 72px;
+  border: 5px solid #0f172a;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: inset -9px -8px 0 rgba(15, 23, 42, 0.08);
+}
+
+.cartoon-badge {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #0f172a;
+  border-radius: 14px;
+  background: #fde68a;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cartoon-panel {
+  position: absolute;
+  right: 14px;
+  top: 20px;
+  width: 12px;
+  height: 24px;
+  border-radius: 999px;
+  background: #0f172a;
+  box-shadow: 0 16px 0 #0f172a;
+}
+
+.cartoon-antenna {
+  position: absolute;
+  left: 70px;
+  top: 0;
+  width: 8px;
+  height: 26px;
+  border-radius: 999px;
+  background: #0f172a;
+}
+
+.cartoon-antenna::before {
+  position: absolute;
+  top: -11px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+  content: "";
+  border: 4px solid #0f172a;
+  border-radius: 999px;
+  background: #67e8f9;
+}
+
+.cartoon-ear {
+  position: absolute;
+  top: 50px;
+  width: 18px;
+  height: 34px;
+  border: 4px solid #0f172a;
+  background: #f8fafc;
+}
+
+.cartoon-ear-left {
+  left: 8px;
+  border-radius: 18px 0 0 18px;
+}
+
+.cartoon-ear-right {
+  right: 8px;
+  border-radius: 0 18px 18px 0;
+}
+
+.cartoon-arm {
+  position: absolute;
+  top: 119px;
+  width: 22px;
+  height: 58px;
+  border: 5px solid #0f172a;
+  border-radius: 999px;
+  background: #f8fafc;
+}
+
+.cartoon-arm-left {
+  left: 10px;
+  transform: rotate(18deg);
+}
+
+.cartoon-arm-right {
+  right: 10px;
+  transform: rotate(-18deg);
+}
+
+.cartoon-leg {
+  position: absolute;
+  top: 168px;
+  width: 25px;
+  height: 38px;
+  border: 5px solid #0f172a;
+  border-radius: 14px 14px 999px 999px;
+  background: #f8fafc;
+}
+
+.cartoon-leg-left {
+  left: 46px;
+}
+
+.cartoon-leg-right {
+  right: 46px;
+}
+
+.cartoon-prop {
+  position: absolute;
+  z-index: -1;
+}
+
+.cartoon-hero-speedster .cartoon-head,
+.cartoon-hero-speedster .cartoon-body,
+.cartoon-hero-speedster .cartoon-arm,
+.cartoon-hero-speedster .cartoon-leg,
+.cartoon-hero-speedster .cartoon-ear {
+  background: #e0f2fe;
+}
+
+.cartoon-hero-speedster .cartoon-prop {
+  right: -20px;
+  bottom: 22px;
+  width: 78px;
+  height: 22px;
+  border-radius: 999px;
+  background: #fde047;
+  box-shadow: -18px -28px 0 -2px #67e8f9, -30px 24px 0 -4px #bfdbfe;
+}
+
+.cartoon-hero-builder .cartoon-head::before {
+  position: absolute;
+  left: 10px;
+  top: -18px;
+  width: 74px;
+  height: 24px;
+  content: "";
+  border: 5px solid #0f172a;
+  border-radius: 16px 16px 8px 8px;
+  background: #facc15;
+}
+
+.cartoon-hero-builder .cartoon-badge {
+  background: #fb923c;
+}
+
+.cartoon-hero-builder .cartoon-prop {
+  right: -4px;
+  top: 112px;
+  width: 56px;
+  height: 16px;
+  border: 4px solid #0f172a;
+  border-radius: 999px;
+  background: #f59e0b;
+  transform: rotate(-28deg);
+}
+
+.cartoon-hero-companion .cartoon-head,
+.cartoon-hero-companion .cartoon-body {
+  border-radius: 44px;
+  background: #ecfeff;
+}
+
+.cartoon-hero-companion .cartoon-faceplate {
+  background: #ccfbf1;
+}
+
+.cartoon-hero-companion .cartoon-prop {
+  left: -10px;
+  top: 106px;
+  width: 42px;
+  height: 42px;
+  border: 5px solid #0f172a;
+  border-radius: 999px;
+  background: #fda4af;
+}
+
+.cartoon-hero-companion .cartoon-prop::before,
+.cartoon-hero-companion .cartoon-prop::after {
+  position: absolute;
+  content: "";
+  background: #0f172a;
+}
+
+.cartoon-hero-companion .cartoon-prop::before {
+  left: 14px;
+  top: 7px;
+  width: 6px;
+  height: 20px;
+}
+
+.cartoon-hero-companion .cartoon-prop::after {
+  left: 7px;
+  top: 14px;
+  width: 20px;
+  height: 6px;
+}
+
+.cartoon-hero-space .cartoon-head {
+  background: #ede9fe;
+}
+
+.cartoon-hero-space .cartoon-faceplate {
+  background: #ddd6fe;
+}
+
+.cartoon-hero-space .cartoon-prop {
+  right: -22px;
+  top: 30px;
+  width: 54px;
+  height: 54px;
+  border: 5px solid #0f172a;
+  border-radius: 999px;
+  background: #fef3c7;
+  box-shadow: -10px 28px 0 -12px #a78bfa;
+}
+
+@keyframes character-bob {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
 @keyframes drift-grid {
   from {
     background-position: 0 0;

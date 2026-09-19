@@ -67,6 +67,7 @@ const labCrew = [
     name: "Zip Volt",
     role: "Speed physics scout",
     symbol: "ZV",
+    type: "speedster",
     color: "from-cyan-300 to-blue-500",
     description:
       "A lightning-fast robot who teaches motion, friction, acceleration, and the science of going faster safely.",
@@ -75,6 +76,7 @@ const labCrew = [
     name: "Rivet Rex",
     role: "Builder engineer",
     symbol: "RR",
+    type: "builder",
     color: "from-amber-300 to-orange-500",
     description:
       "A cheerful construction bot who helps kids plan, measure, prototype, and fix wobbly inventions.",
@@ -83,6 +85,7 @@ const labCrew = [
     name: "Nimbus Nine",
     role: "Care-tech companion",
     symbol: "N9",
+    type: "companion",
     color: "from-sky-200 to-teal-400",
     description:
       "A soft-spoken helper robot who explores sensors, health science, empathy, and human-centered design.",
@@ -91,6 +94,7 @@ const labCrew = [
     name: "Cosmo Kit",
     role: "Space lab navigator",
     symbol: "CK",
+    type: "space",
     color: "from-violet-400 to-fuchsia-500",
     description:
       "A mission-ready explorer who brings rockets, rover logic, astronomy, and planet science into every lab.",
@@ -298,10 +302,28 @@ export default function Home() {
                 key={character.name}
                 className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-[#fffaf2] shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className={`relative flex h-52 items-center justify-center bg-gradient-to-br ${character.color}`}>
+                <div className={`character-stage relative flex h-64 items-end justify-center overflow-hidden bg-gradient-to-br ${character.color}`}>
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,_rgba(255,255,255,0.18)_25%,_transparent_25%,_transparent_50%,_rgba(255,255,255,0.18)_50%,_rgba(255,255,255,0.18)_75%,_transparent_75%)] bg-[length:32px_32px] opacity-30" />
-                  <div className="relative flex h-28 w-28 items-center justify-center rounded-[2rem] border-4 border-white/70 bg-slate-950 text-4xl font-black text-white shadow-2xl transition group-hover:scale-105">
-                    {character.symbol}
+                  <div className={`cartoon-hero cartoon-hero-${character.type}`} aria-hidden="true">
+                    <div className="cartoon-antenna" />
+                    <div className="cartoon-ear cartoon-ear-left" />
+                    <div className="cartoon-ear cartoon-ear-right" />
+                    <div className="cartoon-head">
+                      <div className="cartoon-faceplate">
+                        <span className="cartoon-eye" />
+                        <span className="cartoon-eye" />
+                        <span className="cartoon-smile" />
+                      </div>
+                    </div>
+                    <div className="cartoon-body">
+                      <div className="cartoon-badge">{character.symbol}</div>
+                      <div className="cartoon-panel" />
+                    </div>
+                    <div className="cartoon-arm cartoon-arm-left" />
+                    <div className="cartoon-arm cartoon-arm-right" />
+                    <div className="cartoon-leg cartoon-leg-left" />
+                    <div className="cartoon-leg cartoon-leg-right" />
+                    <div className="cartoon-prop" />
                   </div>
                 </div>
                 <div className="p-6">
