@@ -105,22 +105,23 @@ img {
 .cartoon-hero {
   position: relative;
   z-index: 1;
-  width: 150px;
-  height: 210px;
+  width: 172px;
+  height: 222px;
   transform-origin: bottom center;
   animation: character-bob 4.8s ease-in-out infinite;
+  filter: drop-shadow(0 18px 14px rgba(15, 23, 42, 0.24));
 }
 
 .cartoon-head {
   position: absolute;
-  left: 23px;
+  left: 34px;
   top: 20px;
   width: 104px;
   height: 88px;
   border: 5px solid #0f172a;
   border-radius: 38px 38px 32px 32px;
-  background: #f8fafc;
-  box-shadow: inset -10px -10px 0 rgba(15, 23, 42, 0.08);
+  background: linear-gradient(145deg, #ffffff 0%, #dbeafe 100%);
+  box-shadow: inset -12px -12px 0 rgba(15, 23, 42, 0.09), inset 10px 8px 0 rgba(255, 255, 255, 0.55);
 }
 
 .cartoon-faceplate {
@@ -131,7 +132,8 @@ img {
   height: 44px;
   border: 4px solid #0f172a;
   border-radius: 22px;
-  background: #c7f9ff;
+  background: linear-gradient(145deg, #ecfeff 0%, #67e8f9 100%);
+  box-shadow: inset 0 0 14px rgba(14, 116, 144, 0.3);
 }
 
 .cartoon-eye {
@@ -163,14 +165,14 @@ img {
 
 .cartoon-body {
   position: absolute;
-  left: 33px;
+  left: 44px;
   top: 102px;
   width: 84px;
   height: 72px;
   border: 5px solid #0f172a;
   border-radius: 28px;
-  background: #ffffff;
-  box-shadow: inset -9px -8px 0 rgba(15, 23, 42, 0.08);
+  background: linear-gradient(145deg, #ffffff 0%, #e2e8f0 100%);
+  box-shadow: inset -10px -10px 0 rgba(15, 23, 42, 0.08), inset 8px 8px 0 rgba(255, 255, 255, 0.6);
 }
 
 .cartoon-badge {
@@ -233,12 +235,12 @@ img {
 }
 
 .cartoon-ear-left {
-  left: 8px;
+  left: 19px;
   border-radius: 18px 0 0 18px;
 }
 
 .cartoon-ear-right {
-  right: 8px;
+  right: 19px;
   border-radius: 0 18px 18px 0;
 }
 
@@ -253,12 +255,12 @@ img {
 }
 
 .cartoon-arm-left {
-  left: 10px;
+  left: 20px;
   transform: rotate(18deg);
 }
 
 .cartoon-arm-right {
-  right: 10px;
+  right: 20px;
   transform: rotate(-18deg);
 }
 
@@ -273,11 +275,11 @@ img {
 }
 
 .cartoon-leg-left {
-  left: 46px;
+  left: 57px;
 }
 
 .cartoon-leg-right {
-  right: 46px;
+  right: 57px;
 }
 
 .cartoon-prop {
@@ -285,22 +287,74 @@ img {
   z-index: -1;
 }
 
+.cartoon-hero::after {
+  position: absolute;
+  left: 38px;
+  bottom: 3px;
+  width: 96px;
+  height: 16px;
+  content: "";
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.18);
+  filter: blur(1px);
+}
+
 .cartoon-hero-speedster .cartoon-head,
 .cartoon-hero-speedster .cartoon-body,
 .cartoon-hero-speedster .cartoon-arm,
 .cartoon-hero-speedster .cartoon-leg,
 .cartoon-hero-speedster .cartoon-ear {
-  background: #e0f2fe;
+  background: linear-gradient(145deg, #38bdf8 0%, #1d4ed8 82%);
+}
+
+.cartoon-hero-speedster .cartoon-head {
+  border-radius: 52px 52px 32px 32px;
+  transform: skewX(-4deg);
+}
+
+.cartoon-hero-speedster .cartoon-head::before,
+.cartoon-hero-speedster .cartoon-head::after {
+  position: absolute;
+  content: "";
+  border: 5px solid #0f172a;
+  background: #1d4ed8;
+  transform: rotate(-28deg);
+}
+
+.cartoon-hero-speedster .cartoon-head::before {
+  left: -22px;
+  top: -5px;
+  width: 42px;
+  height: 24px;
+  border-radius: 22px 4px 18px 4px;
+}
+
+.cartoon-hero-speedster .cartoon-head::after {
+  right: -26px;
+  top: 4px;
+  width: 48px;
+  height: 24px;
+  border-radius: 4px 22px 4px 18px;
+}
+
+.cartoon-hero-speedster .cartoon-faceplate {
+  background: linear-gradient(145deg, #f8fafc 0%, #bae6fd 100%);
+}
+
+.cartoon-hero-speedster .cartoon-leg {
+  height: 28px;
+  border-radius: 999px;
+  transform: rotate(-10deg);
 }
 
 .cartoon-hero-speedster .cartoon-prop {
-  right: -20px;
-  bottom: 22px;
-  width: 78px;
-  height: 22px;
+  right: -34px;
+  bottom: 26px;
+  width: 105px;
+  height: 28px;
   border-radius: 999px;
-  background: #fde047;
-  box-shadow: -18px -28px 0 -2px #67e8f9, -30px 24px 0 -4px #bfdbfe;
+  background: linear-gradient(90deg, rgba(250, 204, 21, 0), #fde047 45%, #ffffff 100%);
+  box-shadow: -24px -34px 0 -5px #67e8f9, -40px 26px 0 -8px #bfdbfe, -56px 2px 0 -10px #ffffff;
 }
 
 .cartoon-hero-builder .cartoon-head::before {
@@ -315,29 +369,78 @@ img {
   background: #facc15;
 }
 
+.cartoon-hero-builder .cartoon-head,
+.cartoon-hero-builder .cartoon-body {
+  background: linear-gradient(145deg, #fed7aa 0%, #fb923c 100%);
+}
+
+.cartoon-hero-builder .cartoon-faceplate {
+  background: linear-gradient(145deg, #fff7ed 0%, #fde68a 100%);
+}
+
 .cartoon-hero-builder .cartoon-badge {
   background: #fb923c;
 }
 
 .cartoon-hero-builder .cartoon-prop {
-  right: -4px;
-  top: 112px;
-  width: 56px;
-  height: 16px;
+  right: -8px;
+  top: 116px;
+  width: 68px;
+  height: 18px;
   border: 4px solid #0f172a;
   border-radius: 999px;
   background: #f59e0b;
   transform: rotate(-28deg);
 }
 
+.cartoon-hero-builder .cartoon-prop::after {
+  position: absolute;
+  right: -20px;
+  top: -12px;
+  width: 30px;
+  height: 34px;
+  content: "";
+  border: 4px solid #0f172a;
+  border-radius: 8px;
+  background: #94a3b8;
+}
+
 .cartoon-hero-companion .cartoon-head,
 .cartoon-hero-companion .cartoon-body {
-  border-radius: 44px;
-  background: #ecfeff;
+  border-radius: 52px;
+  background: linear-gradient(145deg, #ffffff 0%, #e0f2fe 100%);
+}
+
+.cartoon-hero-companion .cartoon-head {
+  width: 112px;
+  height: 82px;
+  left: 30px;
+  border-radius: 52px;
+}
+
+.cartoon-hero-companion .cartoon-body {
+  width: 98px;
+  height: 86px;
+  left: 37px;
+  top: 96px;
+  border-radius: 46px;
 }
 
 .cartoon-hero-companion .cartoon-faceplate {
+  left: 20px;
+  width: 64px;
   background: #ccfbf1;
+}
+
+.cartoon-hero-companion .cartoon-arm {
+  top: 116px;
+  height: 66px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.cartoon-hero-companion .cartoon-leg {
+  display: none;
 }
 
 .cartoon-hero-companion .cartoon-prop {
@@ -372,22 +475,38 @@ img {
 }
 
 .cartoon-hero-space .cartoon-head {
-  background: #ede9fe;
+  top: 28px;
+  height: 76px;
+  border-radius: 52px 52px 24px 24px;
+  background: linear-gradient(145deg, #e0e7ff 0%, #a78bfa 100%);
 }
 
 .cartoon-hero-space .cartoon-faceplate {
-  background: #ddd6fe;
+  background: linear-gradient(145deg, #ede9fe 0%, #c4b5fd 100%);
+}
+
+.cartoon-hero-space .cartoon-body {
+  border-radius: 22px 22px 36px 36px;
+  background: linear-gradient(145deg, #f8fafc 0%, #94a3b8 100%);
+}
+
+.cartoon-hero-space .cartoon-leg {
+  top: 176px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #334155;
 }
 
 .cartoon-hero-space .cartoon-prop {
-  right: -22px;
-  top: 30px;
-  width: 54px;
-  height: 54px;
+  right: -25px;
+  top: 36px;
+  width: 58px;
+  height: 58px;
   border: 5px solid #0f172a;
   border-radius: 999px;
-  background: #fef3c7;
-  box-shadow: -10px 28px 0 -12px #a78bfa;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0 12%, #fef3c7 13% 44%, #7c3aed 45% 100%);
+  box-shadow: -12px 30px 0 -12px #a78bfa, -150px 88px 0 -20px rgba(15, 23, 42, 0.18);
 }
 
 @keyframes character-bob {

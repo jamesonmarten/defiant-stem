@@ -65,12 +65,12 @@ const scienceTracks = [
 const labCrew = [
   {
     name: "Zip Volt",
-    role: "Speed physics scout",
+    role: "Blue streak racer bot",
     symbol: "ZV",
     type: "speedster",
     color: "from-cyan-300 to-blue-500",
     description:
-      "A lightning-fast robot who teaches motion, friction, acceleration, and the science of going faster safely.",
+      "A turbo-charged speed robot with aerodynamic fins who teaches motion, friction, acceleration, and safe speed experiments.",
   },
   {
     name: "Rivet Rex",
@@ -83,21 +83,21 @@ const labCrew = [
   },
   {
     name: "Nimbus Nine",
-    role: "Care-tech companion",
+    role: "Soft care-tech robot",
     symbol: "N9",
     type: "companion",
     color: "from-sky-200 to-teal-400",
     description:
-      "A soft-spoken helper robot who explores sensors, health science, empathy, and human-centered design.",
+      "A huggable helper robot with soft rounded armor who explores sensors, health science, empathy, and human-centered design.",
   },
   {
     name: "Cosmo Kit",
-    role: "Space lab navigator",
+    role: "Space droid navigator",
     symbol: "CK",
     type: "space",
     color: "from-violet-400 to-fuchsia-500",
     description:
-      "A mission-ready explorer who brings rockets, rover logic, astronomy, and planet science into every lab.",
+      "A rolling space droid with a sensor dome who brings rockets, rover logic, astronomy, and planet science into every lab.",
   },
 ];
 
