@@ -62,6 +62,41 @@ const scienceTracks = [
   "Space, rockets, force, and flight",
 ];
 
+const labCrew = [
+  {
+    name: "Zip Volt",
+    role: "Speed physics scout",
+    symbol: "ZV",
+    color: "from-cyan-300 to-blue-500",
+    description:
+      "A lightning-fast robot who teaches motion, friction, acceleration, and the science of going faster safely.",
+  },
+  {
+    name: "Rivet Rex",
+    role: "Builder engineer",
+    symbol: "RR",
+    color: "from-amber-300 to-orange-500",
+    description:
+      "A cheerful construction bot who helps kids plan, measure, prototype, and fix wobbly inventions.",
+  },
+  {
+    name: "Nimbus Nine",
+    role: "Care-tech companion",
+    symbol: "N9",
+    color: "from-sky-200 to-teal-400",
+    description:
+      "A soft-spoken helper robot who explores sensors, health science, empathy, and human-centered design.",
+  },
+  {
+    name: "Cosmo Kit",
+    role: "Space lab navigator",
+    symbol: "CK",
+    color: "from-violet-400 to-fuchsia-500",
+    description:
+      "A mission-ready explorer who brings rockets, rover logic, astronomy, and planet science into every lab.",
+  },
+];
+
 const testimonials = [
   {
     quote:
@@ -239,6 +274,42 @@ export default function Home() {
                 <div className="mb-5 h-2 w-16 rounded-full bg-cyan-300" />
                 <h3 className="text-xl font-black">{track}</h3>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-white py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(34,211,238,0.16),_transparent_28%),radial-gradient(circle_at_82%_12%,_rgba(251,191,36,0.18),_transparent_24%)]" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#8a4d0d]">Meet the Defiant Lab Crew</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-5xl">
+              Original STEM heroes kids can root for.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Each kit features playful mascot guides with comic-style missions, build challenges, and science prompts that make robotics feel like an adventure.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {labCrew.map((character) => (
+              <article
+                key={character.name}
+                className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-[#fffaf2] shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className={`relative flex h-52 items-center justify-center bg-gradient-to-br ${character.color}`}>
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,_rgba(255,255,255,0.18)_25%,_transparent_25%,_transparent_50%,_rgba(255,255,255,0.18)_50%,_rgba(255,255,255,0.18)_75%,_transparent_75%)] bg-[length:32px_32px] opacity-30" />
+                  <div className="relative flex h-28 w-28 items-center justify-center rounded-[2rem] border-4 border-white/70 bg-slate-950 text-4xl font-black text-white shadow-2xl transition group-hover:scale-105">
+                    {character.symbol}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{character.role}</p>
+                  <h3 className="mt-2 text-2xl font-black text-slate-900">{character.name}</h3>
+                  <p className="mt-3 text-base leading-7 text-slate-600">{character.description}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
